@@ -1,4 +1,4 @@
-Thrift whitepage
+[Thrift](https://thrift.apache.org/) Whitepaper
 
 ## Types
 
