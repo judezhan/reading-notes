@@ -14,7 +14,7 @@ Thrift whitepage
 * string
 
 #### 2. Struct
-```json
+```
 struct User {
 	1: required i32 user_id,
 	2: required string username,
@@ -27,7 +27,7 @@ struct User {
  * **set\<type\>** An unordered set of unique elements. Translates into an STL set, Java HashSet, set in Python, or native dictionary in PHP/Ruby.
  * **map\<type1, type2\>** A map of strictly unique keys to values Translates into an STL map, Java HashMap, PHP associative array, or Python/Ruby dictionary.
  
-```json
+```
  struct Class {
  	1: required i16 class_id,
 	2: required list<User> users
@@ -35,7 +35,7 @@ struct User {
 ```
 
 #### 4. Exception
-```json
+```
 exception Error {
 	1: required i16 error_code,
 	2: optional string error_msg
@@ -50,7 +50,7 @@ service <name> {	<returntype> <name>(<arguments>)		[throws (<exceptions>)]
 	...}
 ```
 
-```json
+```
 service UserService {
 	void set_username(1:i32 user_id, 2:string value),
 	string get_username(1:i32 user_id) throws (1:Error err)
@@ -133,7 +133,7 @@ In addition to the above TTransport interface, there is a TServerTransport inter
 
 * The last core interface in the Thrift design is the TProcessor, perhaps the most simple of the constructs. The interface is as follows:
 
-```jsoninterface TProcessor {	bool process(TProtocol in, TProtocol out)    	throws TException}
+```interface TProcessor {	bool process(TProtocol in, TProtocol out)    	throws TException}
 ```
 * The key design idea here is that the complex systems we build can fundamentally be broken down into agents or services that operate on inputs and outputs. In most cases, there is actually just one input and output (an RPC client) that needs handling.
 
